@@ -17,6 +17,7 @@ echo "======================== 日期 $do_date ========================"
 
 
 sql="
+set hive.exec.dynamic.partition.mode=nonstrict;
 insert overwrite table "$APP".dwd_start_log
 PARTITION (dt='$do_date')
 select

@@ -1,6 +1,6 @@
 use gmall;
-drop table if exists dwd_start_log;
-CREATE EXTERNAL TABLE dwd_start_log(
+drop table if exists dwd_base_event_log;
+CREATE EXTERNAL TABLE dwd_base_event_log(
 `mid_id` string,
 `user_id` string,
 `version_code` string,
@@ -18,14 +18,10 @@ CREATE EXTERNAL TABLE dwd_start_log(
 `network` string,
 `lng` string,
 `lat` string,
-`entry` string,
-`open_ad_type` string,
-`action` string,
-`loading_time` string,
-`detail` string,
-`extend1` string
-)
-PARTITIONED BY (dt string)
+`event_name` string,
+`event_json` string,
+`server_time` string)
+PARTITIONED BY (`dt` string)
 stored as parquet
-location '/warehouse/gmall/dwd/dwd_start_log/'
+location '/warehouse/gmall/dwd/dwd_base_event_log/'
 TBLPROPERTIES('parquet.compression'='lzo');
