@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="2238b4b2-6284-49b1-aacf-b07d9e97ced3" name="hadoop100" url="http://39.98.193.163">
-        <fileTransfer host="39.98.193.163" port="22" accessType="SFTP">
+      <webServer id="2238b4b2-6284-49b1-aacf-b07d9e97ced3" name="hadoop100" url="http://39.100.212.140">
+        <fileTransfer host="39.100.212.140" port="22" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

@@ -368,4 +368,4 @@ from ${APP}.ods_base_province bp
 join ${APP}.ods_base_region br
 on bp.region_id=br.id;
 "
-beeline -u "jdbc:hive2://hadoop100:10000/" -n $hive -e "$sql"
+beeline -u "jdbc:hive2://hadoop100:10000/" -n hive -e "$sql"

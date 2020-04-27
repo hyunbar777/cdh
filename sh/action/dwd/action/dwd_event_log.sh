@@ -316,4 +316,4 @@ select
 from "$APP".dwd_base_event_log
 where dt='$do_date' and event_name='error';
 "
-beeline -u "jdbc:hive2://hadoop100:10000/" -n $hive -e "$sql"
+beeline -u "jdbc:hive2://hadoop100:10000/" -n hive -e "$sql"

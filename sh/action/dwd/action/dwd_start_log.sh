@@ -47,4 +47,4 @@ select
 from "$APP".ods_start_log
 where dt='$do_date';
 "
-beeline -u "jdbc:hive2://hadoop100:10000/" -n $hive -e "$sql"
+beeline -u "jdbc:hive2://hadoop100:10000/" -n hive -e "$sql"

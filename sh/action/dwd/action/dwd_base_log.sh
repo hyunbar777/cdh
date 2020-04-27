@@ -17,7 +17,7 @@ echo "======================== 日期 $do_date ========================"
 
 
 sql="
-set hive.exec.dynamic.partition.mode=nonstrict;
+use gmall;
 insert overwrite table "$APP".dwd_base_event_log partition(dt='$do_date')
 select
     base_analizer(line,'mid') as mid_id,
@@ -42,6 +42,5 @@ select
     base_analizer(line,'st') as server_time
 from "$APP".ods_event_log lateral view flat_analizer(base_analizer(line,'et')) tem_flat as event_name,event_json
 where dt='$do_date'  and base_analizer(line,'et')<>'';
-    
 "
-beeline -u "jdbc:hive2://hadoop100:10000/" -n $hive -e "$sql"
+beeline -u "jdbc:hive2://hadoop100:10000/" -n hive -e "$sql"
