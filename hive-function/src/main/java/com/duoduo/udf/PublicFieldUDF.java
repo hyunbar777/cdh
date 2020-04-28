@@ -18,11 +18,11 @@ public class PublicFieldUDF extends UDF {
         JSONObject jsonObject = new JSONObject(split[1].trim());
         String result = "";
         if ("et".equals(key)) {
-            if (jsonObject.has(key)) {
-                result = jsonObject.getString(key);
+            if (jsonObject.has("et")) {
+                result = jsonObject.getString("et");
             }
         } else if ("st".equals(key)) {
-            result = split[0];
+            result = split[0].trim();
         } else {
             JSONObject cm = jsonObject.getJSONObject("cm");
             if (cm.has(key)) {
